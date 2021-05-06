@@ -134,6 +134,15 @@ http://miservidorDeAplicacion.com:8080/index.jsp?numero1=5&numero2=6
 
 
 
+<html>
+    <body>
+        <h1>Hola amigos... Se sumar !</h1>
+        
+        
+        <p> El resultado de sumar 7 y 19 vale: <b>19</b></p>
+    
+    </body>
+</html>
 
 
 
