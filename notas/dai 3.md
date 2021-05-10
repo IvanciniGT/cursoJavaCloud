@@ -24,3 +24,5 @@ docker run --name miTomcat -d --rm -p 8080:8080 \
 -e TOMCAT_PASSWORD=password \
 -e TOMCAT_ALLOW_REMOTE_MANAGEMENT=1 \
 bitnami/tomcat
+
+jstatd -J-Djava.rmi.server.hostname=$(curl -s ifconfig.me) -p 9999 -J-Djava.security.policy=<(echo 'grant codebase "file:${java.home}/../lib/tools.jar" {permission java.security.AllPermission;};')
