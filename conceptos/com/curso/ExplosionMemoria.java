@@ -2,7 +2,7 @@ package com.curso;
 
 //import java.lang.Math;
 import java.util.ArrayList;
-
+// Map HashMap
 class ExplosionMemoria{
     // 0 -> RAM GC
     // ......
@@ -14,7 +14,8 @@ class ExplosionMemoria{
         for (  int cantidad=0; cantidad< 1*1000*1000; cantidad++ ){
             double numeroAleatorio = ( Math.random() * cantidad );
             numeros.add(numeroAleatorio);
-            //Thread.sleep(0);
+            //Thread.sleep(0,1);
+///            Syste.gc(); FEO FEO 
         }
         long tout=System.currentTimeMillis();
 //        System.out.println("El resultado es: " + numeros);
@@ -36,3 +37,5 @@ double  - 8 bytes
 */
 
 // TEXTO
+
+//jstatd -J-Djava.rmi.server.hostname=$(curl -s ifconfig.me) -p 9999 -J-Djava.security.policy=<(echo 'grant codebase "file:${java.home}/../lib/tools.jar" {permission java.security.AllPermission;};')
