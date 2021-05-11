@@ -11,7 +11,7 @@ class ExplosionMemoria{
     public static void main(String[] args) throws Exception {
         long tin=System.currentTimeMillis();
         ArrayList<Double> numeros=new ArrayList<Double>();
-        for (  int cantidad=0; cantidad< 1*1000*1000; cantidad++ ){
+        for (  int cantidad=0; cantidad< 10*1000*1000; cantidad++ ){
             double numeroAleatorio = ( Math.random() * cantidad );
             numeros.add(numeroAleatorio);
             //Thread.sleep(0,1);
