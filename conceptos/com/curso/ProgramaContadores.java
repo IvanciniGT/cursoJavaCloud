@@ -12,5 +12,6 @@ class ProgramaContadores{
 
         micontador.contar(contador1, velo1);
         micontador2.contar(contador2, velo2);
+        
     }
 }

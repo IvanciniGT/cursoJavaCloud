@@ -1,8 +1,10 @@
 package com.curso;
 
-class Contador {
+class Contador extends Thread{
     
     private String nombre;
+    private int numero;
+    private double velocidad;
     
     Contador(String nombre){
         this.nombre=nombre;
@@ -10,10 +12,20 @@ class Contador {
     
     // Velocidad: Números contados por cada 10 segundos
     // Velocidad de 5 palabras cada 10 segundos
-    void contar(int numero, double velocidad) throws Exception{
-        for (  int current=1; current<= numero; current++ ){
+    void contar(int numero, double velocidad) {
+        this.numero=numero;
+        this.velocidad=velocidad;
+        start();
+    }
+    
+    public void run() {
+        for (  int current=1; current<= this.numero; current++ ){
             System.out.println("Soy " +this.nombre+ ", voy por el numero: " + current);
-            Thread.sleep((long)(1000./velocidad));
+            try{
+                Thread.sleep((long)(1000./this.velocidad));
+            }catch(Exception e){
+                System.out.print(e);
+            }
         }
     }
     
