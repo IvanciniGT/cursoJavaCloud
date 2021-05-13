@@ -27,6 +27,9 @@ class Contador extends Thread{
                 System.out.print(e);
             }
         }
+        finalizar();
+    }
+    void finalizar(){
         System.out.println("Ya acabé. Soy: "+ this.nombre);
         Thread.dumpStack();
     }

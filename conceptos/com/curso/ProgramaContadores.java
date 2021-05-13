@@ -2,13 +2,13 @@ package com.curso;
 
 class ProgramaContadores{
     public static void main (String[] args) throws Exception{
-        int contador1 = 20;
+        int contador1 = 2000;
         double velo1 = 2;
-        int contador2 = 50;
+        int contador2 = 5000;
         double velo2 = 4;
-        int contador3 = 50;
+        int contador3 = 5000;
         double velo3 = 3;
-        int contador4 = 20;
+        int contador4 = 2000;
         double velo4 = 1;
         
         Contador micontador = new Contador("Miguel");

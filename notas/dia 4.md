@@ -42,3 +42,50 @@ al llenarse, entra el GC, sobre el EDEN
 Cuando el OLD se llena, se genera un evento FULL GC... tarda mucho
 
 jstatd
+
+
+Si el OLD NO SE LLENA... eso es sintoma de? Exceso de memoria
+
+                                    30% <<<< 10 Gbs RAM : 3Gbs
+El OLD se debe llenar 60-100% <<<< 60-90
+                      90-100%
+        Si se llena (que es algo normal) y BAJA por debajo de 50-60%  RUINA
+            Me sobra ram y Le tengo que quitar RAM a la MV
+        Si se llena y baja por encima del 85-90%            RUINA
+            Me falta RAM
+        Si se baja entre 50%-80%
+    
+        SI EL EDEN NO SE VACIA EN UN GC PROBLEMON....
+            1º se ha intentado un gc en eden
+            2º Se ha llenado el old
+                se ha intentado un gc old
+            3º No hay hueco y necesito seguir dejando cosas en eden
+                ME FALTA MUCHA RAM
+NORMAL:
+    El EDEN debe caer de ven en cuando a CERO
+    OLD Del 50-60% al 90% <<<< CALCULO UNA LINEA BASE = CONSTANTE
+    
+Que datos llegan al OLD?
+    Los referenciados <<<
+        CACHE <<< Datos que quiero en RAM por ser de uso recurrente.
+        Esos datos a priori estarían en otros sitios: DISCO, BBDD
+            CACHE ESTATICA: Tipos de camisas, de pantalones, tallas, colores
+            CACHE DINAMICA: Mientras un dato está vivo en una app, el dato se cachea
+    
+    
+    
+Dia a dia 8Gbs
+---------------
+16Gbs de RAM
+
+
+Kibana <<< Analizar logs de apps
+
+Fluentd | Filebeat   ->>> ElasticSearch <<< Kibana
+
+Weblogic ---> log 
+
+
+Threads   ---->    100 hilos POOL EJECUTORES    ---->  30  POOL Conexiones a BBDD
+                        ^
+                       COLA (tamaño)
